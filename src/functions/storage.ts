@@ -1,18 +1,20 @@
+import { OpenIdProvider } from "./sui"
+
 export interface ZkLoginSession {
-  maxEpoch: number;
-  jwtRandomness: string;
-  ephemeralPrivateKey: string;
+	openIdProvider: OpenIdProvider;
+	maxEpoch: number;
+	jwtRandomness: string;
+	ephemeralPrivateKey: string;
 }
 
 export const saveZkLoginSession = (session: ZkLoginSession) =>
 	localStorage.setItem("zkLoginSession", JSON.stringify(session))
 
-export const getZkLoginSession = () : ZkLoginSession | null => {
+export const getZkLoginSession = (): ZkLoginSession | null => {
 	const sessionString = localStorage.getItem("zkLoginSession")
-	const session = sessionString ? JSON.parse(sessionString) : null 
-	return session
+	return sessionString ? JSON.parse(sessionString) : null
 }
 
 export const removeZkLoginSession = () => {
-	localStorage.removeItem("zkLoginSession",)
+	localStorage.removeItem("zkLoginSession")
 }
