@@ -1,11 +1,11 @@
 import { useReducer } from "react"
 
 export enum CurrentTab {
-	HomeTab,
-    QuestTab,
-    StoreTab,
-    SharesTab,
-    ProfileTab
+	HomeTab = "home",
+    QuestTab = "quest",
+    StoreTab = "store",
+    SharesTab = "shares",
+    ProfileTab = "profile"
 }
 
 export interface SuiAccountState {
@@ -21,7 +21,7 @@ export type SuiAccountAction =
 	| SetCurrentPageAction 
 
 const initialState: SuiAccountState = {
-	currentTab: CurrentTab.HomeTab,
+	currentTab: CurrentTab.QuestTab,
 }
 
 export const reducer = (state: SuiAccountState = initialState, action: SuiAccountAction): SuiAccountState => {

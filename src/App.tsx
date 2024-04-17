@@ -8,15 +8,15 @@ import { SuiAccountPage } from "./pages/SuiAccountPage"
 
 export const App = () => {
 	return (
-		<NextUIProvider>
-			<div className="light">
+		<div className="light">
+			<NextUIProvider>
 				<div className="container">
 					<RootProvider>
 						<WrappedApp />
 					</RootProvider>
 				</div>
-			</div>
-		</NextUIProvider>
+			</NextUIProvider>
+		</div>
 	)
 }
 

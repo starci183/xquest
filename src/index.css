@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 .container {
-  @apply max-w-[360px] max-h-[960px] w-full h-[540px] bg-background p-6
+  @apply max-w-[540px] max-h-[960px] w-full bg-background p-6
 }
