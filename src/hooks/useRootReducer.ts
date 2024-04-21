@@ -9,7 +9,7 @@ export enum CurrentPage {
 }
 
 export interface SuiSession {
-	account: AccountData | null,
+	account?: AccountData | null,
 	balance?: bigint
 }
 
@@ -61,6 +61,17 @@ export const reducer = (state: RootState = initialState, action: RootAction): Ro
 				sui: {
 					...state.sessions.sui,
 					account: action.payload
+				}
+			}
+		}
+	case "SET_SUI_SESSION_BALANCE":
+		return {
+			...state,
+			sessions: {
+				...state.sessions,
+				sui: {
+					...state.sessions.sui,
+					balance: action.payload
 				}
 			}
 		}
