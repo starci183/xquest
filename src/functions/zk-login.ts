@@ -106,6 +106,7 @@ export const completeZkLogin = async (): Promise<AccountData | null> => {
 
 	const userSalt = BigInt(saltResponse.salt)
 	const userAddress = jwtToAddress(jwt, userSalt)
+	console.log(userAddress)
 
 	const savedZkLoginSession = getZkLoginSession()
 	if (!savedZkLoginSession) {
